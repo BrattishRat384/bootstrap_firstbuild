@@ -31,7 +31,7 @@
                   <a href="./index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./members.html" class="nav-link">Members</a>
+                  <a href="./members.php" class="nav-link">Members</a>
                 </li>
                 <li class="nav-item">
                   <a href="./index.html" class="nav-link">Social</a>
