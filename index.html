@@ -1,5 +1,14 @@
 <!doctype html>
 <html lang="en">
+
+<!--
+***************************
+* Please read documention *
+* This is from a tutorial *
+* Please check readme.md  *
+***************************
+-->
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,54 +16,412 @@
     <!-- Required scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style/style.css">    
+    <!-- Icon import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- local css import-->
+    <link rel="stylesheet" href="/style/style.css"> 
+    <!-- Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet"/>   
   </head>
   <!-- Main code -->
   <body>
     <!-- Nav bar start -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top"> <!-- defines navbar, sets nav to large, bg dark, and nav colour for dark bg, adds padding on y axis of 3 predefined, fix-top makes the nav always appear at the top-->
         <div class="container">
             <!-- Title -->
-            <a href="./index.html" class="navbar-brand">Bootstrap_FirstBuild</a>
+            <a href="#" class="navbar-brand">Bootstrap_FirstBuild</a> <!-- Title text with href to index -->
 
             <!-- Hamburgur menu (Collapses navmenu when scaled)-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> <!-- Responce for hamburgure menu and calls for nav bar-->
               <!-- Navbar Icon -->
-              <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span> <!-- calls for predefined svg-->
             </button>
 
             <!-- Navmenu -->
-            <div class="collapse navbar navbar-collapse" id="navmenu">
+            <!--
+              ***********************
+              * Fix Nav text colour *
+              ***********************
+            -->
+            <div class="collapse navbar navbar-collapse" id="navmenu"> <!-- Makes nav into hamburger menu when width < x ammount and adds id-->
               <!-- Unordered list -->
-              <ul class="navbar-nav ms-auto">
+              <ul class="navbar-nav ms-auto"> <!-- defines navbar -->
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">Home</a>
+                  <a href="#learn" class="nav-link">What you'll learn</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">Members</a>
+                  <a href="#questions" class="nav-link">Questions</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">Social</a>
+                  <a href="./index.html" class="nav-link">Instructures</a>
                 </li>
-                <li class="nav-item">
-                  <a href="./index.html" class="nav-link">Contact</a>
-                </li>
+
               </ul>
             </div>
         </div>
     </nav>
     <!-- Navbar end -->
-    <!--
-      ##############################
-      #      END OF TUTORIAL       #
-      # Continuing from Class Work #
-      ##############################
-    -->
+    
     <!-- Showcase start -->
-    <section class="bg-dark text-light p-5 text-center">
-      This is the home page.
+    <section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"> <!-- Sets bg to dark, text light, padding = predefined value 5 removes padding on bottom on lg screen, and centers text, on med-large screens will align to start -->
+      <!-- Container  / content -->
+      <div class="container">
+        <!-- flex box -->
+        <div class="d-sm-flex align-items-center justify-content-between"> <!-- d-felx Makes items in a row -sm means breakpoint small | aligns items to center | sets items to align next to each other -->
+          <div>
+            <h1>Become a <span class="text-warning">web developer</span></h1> <!-- span w/ text-x means setting text colour from defult -->
+            <p class="lead my-4"> <!-- class lead means to make the text a little bigger? my-4 sets padding on y axis to predefined value 4 -->
+              Start your journey by learning the fundamentals of HTML, CSS, and JavaScript, the building blocks of the web. Explore different specializations like front-end development (focusing on user interfaces) or back-end development (working with server-side logic).
+            </p>
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">Start the enrolment</button> <!-- Adds a button, btn-primary sets button to blue, btn-lg sets size to large-->
+          </div>
+          <img class="img-fluid w-50 d-none d-sm-block" src="./img/showcase.svg" alt=""> <!-- img-fluid makes img change, w-50 means width 50% | d-none and D-sm-block stops img on small screens, d means display -->
+        </div>
+      </div>
     </section>
     <!-- Showcase End -->
+
+    <!-- news letter start -->
+    <section class="bg-primary text-light p-5"> <!-- adds section, sets bg to light blue / primary colour, text light and padding of 5 predefined -->
+      <div class="container"> <!-- container -->
+        <div class="d-md-flex justify-content-between align-items-center"> <!-- sets flex box to start at medium display size, centers content to eachother, and centers all itesm -->
+          <h3 class="mb-3 mb-md-0"> <!-- sets a margine on bottom of 3 predefined, but removes it on medium screens -->
+            sign up for our newsletter
+          </h3>
+          <div class="input-group" news-input> <!-- Defines email field and submit btn -->
+            <input
+            type="text" 
+            class="form-control"
+            placeholder="Enter email" 
+            aria-label="Enter email" 
+            aria-describedby="Submit"> <!-- defines text feild, aria is for vision impared -->
+            <button class="btn btn-dark btn-lg" type="button" id="button-submitemail">Submit</button> <!-- Defines button, sets to dark and large, sets ID -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- news letter end -->
+    
+    <!-- Boxes start -->
+    <section class="p-5"> <!-- defines section with padding of 5-->
+      <div class="container"> <!-- sets class-->
+        <div class="row text-center g-4"> <!-- defines as row and centers text-->
+          <div class="col-md"> <!-- Makes a colum when smaller then med-->
+            <div class="card bg-dark text-light"> <!-- sets colours-->
+              <div class="card-body text-center"> 
+                <div class="h1 mb-3"> <!-- sets to h1 sizing and margine bottom of 3-->
+                  <i class="bi bi-laptop"></i>  <!-- sets img -->
+                </div>
+                <h3 class="card-title mb-3">Virtual</h3>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Iure, quas quidem possimus dolorum esse eligendi?
+                </p>
+                <a href="#" class="btn btn-primary">Read More</a> <!-- adds button -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-secondary text-light">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="bi bi-person-square"></i>
+                </div>
+                <h3 class="card-title mb-3">Hybrid</h3>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Iure, quas quidem possimus dolorum esse eligendi?
+                </p>
+                <a href="#" class="btn btn-dark">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h3 class="card-title mb-3">In Person</h3>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Iure, quas quidem possimus dolorum esse eligendi?
+                </p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Boxes end-->
+
+    <!-- Learn sections start-->
+    <section id="learn" class="p-5"> <!-- Defines area -->
+      <div class="container">
+        <div class="row align-items-cneter justify-content-between">
+          <div class="col-md"> <!-- sets collum to med -->
+            <img src="img/fundamentals.svg" class="img-fluid">
+          </div>
+          <div class="col-md p-5">
+            <h2>Learn the fundiments</h2>
+            <p class="lead">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores hic velit nulla a? Cumque, corporis.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio et facere obcaecati animi doloremque alias laborum nostrum eius nulla corporis, veritatis recusandae reprehenderit aspernatur consectetur dignissimos vero temporibus natus provident?</p>
+            <a href="#" class="btn btn-light mt-3"> <!-- adds button -->
+              <i class="bi bi-chevron-right"></i> Read more
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Learn section end -->
+
+    <!-- Learn react start-->
+    <section id="learn" class="p-5 bg-dark text-light"> <!-- Defines area -->
+      <div class="container">
+        <div class="row align-items-cneter justify-content-between">
+          <div class="col-md p-5">
+            <h2>Learn the react</h2>
+            <p class="lead">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores hic velit nulla a? Cumque, corporis.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio et facere obcaecati animi doloremque alias laborum nostrum eius nulla corporis, veritatis recusandae reprehenderit aspernatur consectetur dignissimos vero temporibus natus provident?</p>
+            <a href="#" class="btn btn-light mt-3">
+              <i class="bi bi-chevron-right"></i> Read more
+            </a>
+          </div>
+          <div class="col-md"> <!-- sets collum to med -->
+            <img src="img/react.svg" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Learn react end -->
+    
+    <!-- Questions accodion start -->
+    <section id="questions" class="p-5"> <!-- defines section-->
+      <h2 class="text-center mb-4">Frequently asked questions</h2>
+      <!-- Item 1-->
+      <div class="accordion accordion-flush" id="questions"> <!-- Defines accordion flush-->
+        <div class="accordion-item"> <!-- sets class -->
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one" aria-expanded="false" aria-controls="flush-collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <!-- Item 2-->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three" aria-expanded="false" aria-controls="flush-collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Questions accodion end -->
+
+    <!-- Instructors grid card start -->
+    <section id="instructors" class="p-5 bg-primary">
+      <div class="container">
+        <h2 class="text-center text-white">Our Instructors</h2>
+        <p class="lead text-center text-white mb-5">
+          Our instructors all have 5+ years working as a web developer in the
+          industry
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/11.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                /> <!-- calls for random img and sets it to circle -->
+                <h3 class="card-title mb-3">John Doe</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a> <!-- Adds icon in black -->
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/11.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Jane Doe</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/12.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Steve Smith</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/12.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Sara Smith</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Instructors grid card end -->
+
+    <!-- contact card start-->
+    <section class="p-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center mb-4">Contact info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item">
+                <span class="fw-bold">Main location</span> random adress here
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Phone</span> random Phone here
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Another phone</span> random phone here
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Email</span> random email here
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Another email</span> random email here
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div id="map"> REMOVE THIS TEXT | MAP WILL NOT WORK WITHOUT API ID</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact card end -->
+
+    <!-- footer start -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2024 Callum Long</p>
+        <a href="#" class="position-absolute bottom-0 end-0 p-5"> <!-- Button that bings back to the top -->
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- Modal Start -->
+    <!-- Modal -->
+    <div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enroll" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enroll">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <form>
+              <div class="mb-3">
+                <label for="first-name" class="col-form-lable">
+                  First Name: 
+                </label>
+                <input type="text" class="form-control" id="first-name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-body">
+            <div class="p lead">Fill out this form and we will get back to you</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal end -->
+
+    <!-- Map box config start -->
+    <!-- need to fill access token-->
+    <script>
+      mapboxgl.accessToken = 'Fill me'
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-71.060982, 42.35725],
+        zoom: 18,
+      })
+    </script>
+    <!-- Map box config end-->
 
   </body>
 </html>
